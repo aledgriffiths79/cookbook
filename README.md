@@ -15,6 +15,17 @@
 
     For it not to be complex in design. A good website is a simple functional website thats intuitive. A mixture of appealing images and short but descriptive content. I will also need to consider for the future to what constraints does the app have to perform within (scalability) i.e as your user base grows can your app handle the growth in traffic.
 
+    ---
+
+    | Aled | Griffiths |
+    |  description here    |  and here         |
+    |      |           |
+    |      |           |
+    |      |           |
+    
+
+
+
 
 
 
