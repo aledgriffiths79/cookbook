@@ -20,9 +20,9 @@
     | Potential Scenarios: | Requirement for Scenario to be fulfilled: |
     |------| :--------:|
     |   A user wants to find the ingredients to a particular recipe   |   Provide a search bar. This will work if only that particular recipe has been uploaded onto the website        |
-    |         |           |
-    |      |           |
-    |      |           |
+    |A user wants to add a recipe of there own      |Add a navigation link for the user to go to and upload there recipe           |
+    |May'be the user does'nt have a particular recipe they want to look up but see's an image and then wants to look up its method      |Have a link below the descriptive content of the recipe with the relevant informtion           |
+    
     
 
 
