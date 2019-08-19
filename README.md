@@ -18,6 +18,7 @@
     ---
 
     | Aled | Griffiths |
+    |------| :--------:|
     |  description here    |  and here         |
     |      |           |
     |      |           |
