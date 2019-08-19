@@ -17,10 +17,10 @@
 
     ---
 
-    | Aled | Griffiths |
+    | Potential Scenarios: | Requirement for Scenario to be fulfilled: |
     |------| :--------:|
-    |  description here    |  and here         |
-    |      |           |
+    |   A user wants to find the ingredients to a particular recipe   |   Provide a search bar. This will work if only that particular recipe has been uploaded onto the website        |
+    |         |           |
     |      |           |
     |      |           |
     
