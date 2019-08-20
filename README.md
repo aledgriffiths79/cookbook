@@ -25,11 +25,21 @@
     
 ## Stucture Plane:
 
-The website will present you the user with a intuitive and structured format starting with the navigation. It will be clear and simple, a pridictable structure. More a linear narrative for the audience intended. On each page the title will be highlighted so that you the user knows what page you are on. I will also display a hamburger navigation for mobile use. That, and the footer which will display my name (copyright) will have the same colored theme on all pages. Make it consistent. 
+The website will present you the user with a intuitive and structured format starting with the navigation. It will be clear and simple, displayed in a horizontal fashion on desktop, thus, it being a pridictable structure. More a linear narrative for the audience intended. On each page the title will be highlighted so that you the user knows what page you are on. I will also display a hamburger navigation for mobile use. That, and the footer which will display my name (copyright) will have the same colored theme on all pages. Make it consistent. 
 
 I will structure the home page so that images will use up the most real estate, as i find an appealing image more satisfying to the eye than a lot of content, however i will leave some space to describe the origins of the recipe.   
 
 The recipe page will have a similar structure to that of the home page giving all the recipes that have been uploaded. And finally the "add recipe" page will be a designed as a form to fill in the required fields so that it can be uploaded on the website. 
+
+My intention is to allow users to:
+
+  - Efficiently move through content
+  - Be easily educated and informed
+
+Allow owners (me the developer) to:
+
+  - Accomodate growth and change in the application
+
 
 
 
