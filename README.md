@@ -19,11 +19,19 @@
 
     | Potential Scenarios: | Requirement for Scenario to be fulfilled: |
     |------| :--------:|
-    | A user wants to find the ingredients /n to a particular recipe   | Provide a search bar. This will work if only that particular recipe has been uploaded onto the website        |
+    | A user wants to find the ingredients to a particular recipe   | Provide a search bar. This will work if only that particular recipe has been uploaded onto the website        |
     | A user wants to add a recipe of there own      |  Add a navigation link for the user to go to and upload there recipe           |
     | May'be the user does'nt have a particular recipe they want to look up but see's an image and then wants to look up its method      |  Have a link below the descriptive content of the recipe with the relevant informtion           |
     
-    
+## Stucture Plane:
+
+The website will present you the user with a intuitive and structured format starting with the navigation. It will be clear and simple, a pridictable structure. More a linear narrative for the audience intended. On each page the title will be highlighted so that you the user knows what page you are on. I will also display a hamburger navigation for mobile use. That, and the footer which will display my name (copyright) will have the same colored theme on all pages. Make it consistent. 
+
+I will structure the home page so that images will use up the most real estate, as i find an appealing image more satisfying to the eye than a lot of content, however i will leave some space to describe the origins of the recipe.   
+
+The recipe page will have a similar structure to that of the home page giving all the recipes that have been uploaded. And finally the "add recipe" page will be a designed as a form to fill in the required fields so that it can be uploaded on the website. 
+
+
 
 
 
