@@ -49,7 +49,7 @@ This particular plane focuses on:
 
 Its important as its convention that when its available/accessible you the developer provide iconography and navigation thats both simple to learn and something the user is used to seeing from other websites. 
 
-Here is a wireframe that i have designed before i take on the project. This is designed so that i have the flexibility if needed to alter something, whether it be the functionality, the color scheme, fonts etc as i progress through the project. Its not good practice to set anything in stone from the start but important to have an idea of the structure of the application. 
+In this projects directory is a file **CookBook-wireframe.bmpr**. This mockup is designed so that i have the flexibility if needed to alter something, whether it be the functionality, the color scheme, fonts etc as i progress through the project. Its not good practice to set anything in stone from the start but important to have an idea of the structure of the application. 
 
 
 
