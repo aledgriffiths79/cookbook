@@ -21,10 +21,10 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index')
 def index():
-  """Homepage has 4 recipes from DB that have been viewed the most"""
+  # """Homepage has 4 recipes from DB that have been viewed the most"""
   # four_recipes = mongo.db.recipes.find().sort([('views', DESCENDING)]).limit(4)
-  return render_template('index.html', title='Home') #recipes=four_recipes)
-
+  # return render_template('index.html', title='Home') #recipes=four_recipes)
+  return 'Hello'
 if __name__ == '__main__':
   # Local Host
   # app.run(host='127.0.0.1', debug=True)
