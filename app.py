@@ -10,9 +10,10 @@ app = Flask(__name__)
 # add configuration to our flask application
 
 app.config["MONGO_DBNAME"] = 'CookBook'
-app.config["MONGO_URI"] = 'mongodb+srv://agriffiths79:******@cluster-cookbook-1e5pm.mongodb.net/CookBook?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://agriffiths79:motoisfun38@cluster-cookbook-1e5pm.mongodb.net/CookBook?retryWrites=true&w=majority'
+
 # PyMongo connects to the MongoDB server running on port 27017 on localhost
-app.config["MONGO_URI"] = "mongodb://localhost:27017/recipes"
+# app.config["MONGO_URI"] = "mongodb://localhost:27017/recipes"
 
 # Create an instance of pyMongo
 #(app) is a app object in brackets as an argument
