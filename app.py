@@ -24,10 +24,10 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
   """Homepage has 4 recipes from DB that have been viewed the most"""
-  # four_recipes = mongo.db.Recipes.find()#.sort([('views', DESCENDING)]).limit(1)
-  # return render_template('index.html', title='Home', recipes=four_recipes)
+  four_recipes = mongo.db.Recipes.find()#.sort([('views', DESCENDING)]).limit(1)
+  return render_template('index.html', title='Home', recipes=four_recipes)
   # below is a setting stone to if my production site works
-  return 'Hello'
+  # return 'Hello'
 if __name__ == '__main__':
   # Local Host
   # app.run(host='127.0.0.1', debug=True)
