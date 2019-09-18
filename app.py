@@ -30,7 +30,7 @@ def index():
   # return 'Hello'
 if __name__ == '__main__':
   # Local Host
-  app.run(host='127.0.0.1', debug=True)
+  # app.run(host='127.0.0.1', debug=True)
 
   # Production (Heroku)
-  # app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)
+  app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)
