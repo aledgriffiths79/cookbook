@@ -28,6 +28,11 @@ def index():
   return render_template('index.html', title='Home', recipes=four_recipes)
   # below is a setting stone to if my production site works
   # return 'Hello'
+
+@app.route('/add_recipe') #routing identifier will have the same name as the function name (its a choice as its easier for a beginner)
+def add_recipe():
+  return render_template('add_recipe.html')
+
 if __name__ == '__main__':
   # Local Host
   app.run(host='127.0.0.1', debug=True)

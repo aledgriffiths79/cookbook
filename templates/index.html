@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
+<!-- {% for recipe in recipes %}  -->
   <!-- templating language  -->
       {% for recipe in recipes %}
       {{recipe.recipe_name}}
       {{recipe.ingredients}}
       {{recipe.method}}
       {{recipe.recipe_intro}}
+      
       {% endfor %}
 
+      <ul class="collapsible" data-collapsible="accordion">
+         
+        <li>
+          <!-- expand_more is a visual clue for the user (makes it more intuitive) -->
+          <div class="collapsible-header"><i class="material-icons">expand_more</i><strong>{{recipe.recipe_name}}</strong></div>
+          <div class="collapsible-body"><span>{{recipe.method}}</span></div>
+        </li>
+        {% endfor %}
+      </ul>
 {% endblock %}
