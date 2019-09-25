@@ -8,16 +8,40 @@
     <form action='' method='POST' class="col s12">
       <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">assignment</i>
+          <i class="material-icons prefix">local_dining</i>
           <!-- match the names of the input fields to the names of fields in mongodb -->
           <input id="recipe_name" name='recipe_name' type="text" class="validate">
           <label for="icon_prefix">Recipe Name</label>
         </div>
         <div class="input-field col s12">
-          <i class="material-icons prefix">subject</i>
+          <i class="material-icons prefix">description</i>
           <textarea name="recipe_intro" id="recipe_intro" class="materialize-textarea"></textarea>
-          <label for="icon_telephone">Recipe Introduction</label>
+          <label for="icon_telephone">Short Description</label>
         </div>
+      </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s4">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Ingredients (one per line please)</label>
+            </div>
+            <div class="input-field col s8">
+              <i class="material-icons prefix">description</i>
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Method</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">image</i>
+              <!-- match the names of the input fields to the names of fields in mongodb -->
+              <input id="recipe_name" name='recipe_name' type="text" class="validate">
+              <label for="icon_prefix">Image Link (Full Path)</label>
+            </div>
+          </div>
+        </form>
       </div>
     </form>
   </div>
