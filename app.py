@@ -1,9 +1,13 @@
 import os
+import re
+import math
 # I need to add more functionality to flask, i.e. redirect, request etc
 from flask import Flask, render_template, redirect, request, url_for
+from forms import AddRecipeForm
 from flask_pymongo import PyMongo, DESCENDING
+from pymongo import MongoClient
 from bson.objectid import ObjectId
-
+# dont think i need flash (message flashing (which is used via flask)) as the flashing system basically makes it possible to record a message at the end of a request and access it next request and only next request = usually used for remebering login and password
 # Flask talking to mongo
 app = Flask(__name__)
 
@@ -29,8 +33,15 @@ def index():
   # below is a setting stone to if my production site works
   # return 'Hello'
 
-@app.route('/add_recipe') #routing identifier will have the same name as the function name (its a choice as its easier for a beginner)
+@app.route('/add_recipe', methods=['GET', 'POST']) #routing identifier will have the same name as the function name (its a choice as its easier for a beginner)
 def add_recipe():
+  """Creates a recipe and enters into recipe collection"""
+  form = AddRecipeForm(request.form)
+  if form.validate_on_submit():
+    # set the collection
+    recipes_db = mongo.db.Recipes
+    # insert the new recipe
+    recipes_db.insert_one
   return render_template('add_recipe.html')
 
 if __name__ == '__main__':
