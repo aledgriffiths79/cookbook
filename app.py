@@ -1,9 +1,9 @@
 import os
 import re
 import math
+from forms import AddRecipeForm
 # I need to add more functionality to flask, i.e. redirect, request etc
 from flask import Flask, render_template, redirect, request, url_for
-from forms import AddRecipeForm
 from flask_pymongo import PyMongo, DESCENDING
 from pymongo import MongoClient
 from bson.objectid import ObjectId
@@ -41,7 +41,9 @@ def add_recipe():
     # set the collection
     recipes_db = mongo.db.Recipes
     # insert the new recipe
-    recipes_db.insert_one
+    recipes_db.insert_one({
+      'title'
+    })
   return render_template('add_recipe.html')
 
 if __name__ == '__main__':
