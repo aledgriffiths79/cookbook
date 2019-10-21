@@ -42,8 +42,14 @@ def add_recipe():
     recipes_db = mongo.db.Recipes
     # insert the new recipe
     recipes_db.insert_one({
-      'title'
+      'recipe_name': request.form['recipe_name'],
+      'recipe_intro': request.form['recipe_intro'],
+      'ingredients': request.form['ingredients'],
+      'image': request.form['image'],
+      'views': 0
+
     })
+    return redirect(url_for('index', title='New Recipe Added'))
   return render_template('add_recipe.html')
 
 if __name__ == '__main__':
