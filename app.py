@@ -2,6 +2,7 @@ import os
 import re
 import math
 from forms import AddRecipeForm
+from config import Config
 # I need to add more functionality to flask, i.e. redirect, request etc
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo, DESCENDING
@@ -33,7 +34,7 @@ def index():
   # below is a setting stone to if my production site works
   # return 'Hello'
 
-@app.route('/add_recipe', methods=['GET', 'POST']) #routing identifier will have the same name as the function name (its a choice as its easier for a beginner)
+@app.route('/add_recipe', methods=['POST']) #routing identifier will have the same name as the function name (its a choice as its easier for a beginner)
 def add_recipe():
   """Creates a recipe and enters into recipe collection"""
   form = AddRecipeForm(request.form)
