@@ -41,7 +41,8 @@ def index():
 def add_recipe():
   """Creates a recipe and enters into recipe collection"""
   form = AddRecipeForm(request.form)
-  if form.validate_on_submit():
+  # if form.validate_on_submit():
+  if request.method=='POST':
     # set the collection
     recipes_db = mongo.db.Recipes
     # insert the new recipe
