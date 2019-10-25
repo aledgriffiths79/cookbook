@@ -4,6 +4,7 @@ from wtforms.validators import DataRequired, Length, EqualTo, Email
 
 class AddRecipeForm(FlaskForm):
   recipe_name = StringField('Recipe Name', validators=[DataRequired()])
+  recipe_intro = TextAreaField('Recipe Intro', validators=[DataRequired()])
   short_description = TextAreaField('Short Description', validators=[DataRequired()])
   ingredients = TextAreaField('Ingredients (one per line please)', validators=[DataRequired()])
   method = TextAreaField('Method', validators=[DataRequired()])

@@ -17,6 +17,9 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'CookBook'
 app.config["MONGO_URI"] = 'mongodb+srv://agriffiths79:motoisfun38@cluster-cookbook-1e5pm.mongodb.net/CookBook?retryWrites=true&w=majority'
 
+# i shouldnt upload secret keys to github thus here too, but i can leave it here for now. When i come to upload this application onto the production server (heroku), its then i put it into environment variables inside heroku itself 
+app.config['SECRET_KEY'] = 'nwoiefdjowijefoiwjefoiwefjowiefj'
+
 # PyMongo connects to the MongoDB server running on port 27017 on localhost
 # app.config["MONGO_URI"] = "mongodb://localhost:27017/recipes"
 
@@ -34,7 +37,7 @@ def index():
   # below is a setting stone to if my production site works
   # return 'Hello'
 
-@app.route('/add_recipe', methods=['POST']) #routing identifier will have the same name as the function name (its a choice as its easier for a beginner)
+@app.route('/add_recipe', methods=['GET', 'POST']) #routing identifier will have the same name as the function name (its a choice as its easier for a beginner)
 def add_recipe():
   """Creates a recipe and enters into recipe collection"""
   form = AddRecipeForm(request.form)
@@ -45,13 +48,16 @@ def add_recipe():
     recipes_db.insert_one({
       'recipe_name': request.form['recipe_name'],
       'recipe_intro': request.form['recipe_intro'],
+      'short_description': request.form['short_description'],
       'ingredients': request.form['ingredients'],
+      'method': request.form['method'],
       'image': request.form['image'],
+      'submit': request.form['submit'],
       'views': 0
 
     })
     return redirect(url_for('index', title='New Recipe Added'))
-  return render_template('add_recipe.html')
+  return render_template('add_recipe.html', title='add a recipe')
 
 if __name__ == '__main__':
   # Local Host
