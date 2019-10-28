@@ -41,7 +41,7 @@ def index():
 def add_recipe():
   """Creates a recipe and enters into recipe collection"""
   form = AddRecipeForm(request.form)
-  # if form.validate_on_submit():
+  # if form.validate_on_submit(): THIS 1 DOESNT WORK. WHY?
   if request.method=='POST':
     # set the collection
     recipes_db = mongo.db.Recipes
@@ -58,7 +58,25 @@ def add_recipe():
 
     })
     return redirect(url_for('index', title='New Recipe Added'))
-  return render_template('add_recipe.html', title='add a recipe')
+  return render_template('add_recipe.html', title='add a recipe', form=form)
+
+@app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
+def delete_recipe(recipe_id):
+  '''Delete a recipe with added confirmation'''
+  recipe_db = mongo.db.Recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
+  if request.method == 'GET':
+    form = ConfirmDelete(data=recipe_db)
+    return render_template('delete_recipe.html', title='Delete Recipe', form=form)
+  form = ConfirmDelete(request.form)
+  if request.method == 'GET':
+    recipe_db = mongo.db.Recipes
+    recipe_db.delete_one({
+      '_id': ObjectId(recipe_id),
+    })
+    return redirect(url_for('index', title='Welsh Recipes Updated'))
+  return render_template('delete_recipe.html', title='delete recipe', recipe=recipe_db, form=form)
+
+
 
 if __name__ == '__main__':
   # Local Host

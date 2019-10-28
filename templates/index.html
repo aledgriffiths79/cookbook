@@ -1,8 +1,42 @@
 {% extends 'base.html' %}
+{% block nav_index %}active{% endblock %}
 {% block content %}
+
+    <header>
+      <h2>Welsh Recipes</h2>
+      <div class="row">
+        <div class="col l4">
+          <form action="{{ url_for('search') }}">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                  <i class="material-icons right">send</i>
+              </button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="row text-center">
+      {% for recipe in recipes %}
+          <div class="col l3 m6 s12">
+            <div class="card">
+                <div class="card-image">
+                  <img src="{{ recipe.image }}">
+                  <span class="card-title">{{ recipe_name}}</span>
+                </div>
+                <div class="card-content">
+                  <p>{{ recipe.recipe_intro}}</p>
+                </div>
+                <div class="card-action">
+                  <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">Find Out More</a>
+                </div>
+            </div> 
+          </div>
+      {% endfor %}
+    </div>
+{% endblock %}
+
 <!-- {% for recipe in recipes %}  -->
   <!-- templating language  -->
-      {% for recipe in recipes %}
+      <!-- {% for recipe in recipes %}
       {{recipe.recipe_name}}
       {{recipe.ingredients}}
       {{recipe.method}}
@@ -13,10 +47,10 @@
       <ul class="collapsible" data-collapsible="accordion">
          
         <li>
-          <!-- expand_more is a visual clue for the user (makes it more intuitive) -->
-          <div class="collapsible-header"><i class="material-icons">expand_more</i><strong>{{recipe.recipe_name}}</strong></div>
+           expand_more is a visual clue for the user (makes it more intuitive) -->
+          <!-- <div class="collapsible-header"><i class="material-icons">expand_more</i><strong>{{recipe.recipe_name}}</strong></div>
           <div class="collapsible-body"><span>{{recipe.method}}</span></div>
         </li>
         {% endfor %}
-      </ul>
-{% endblock %}
+      </ul> -->
+
