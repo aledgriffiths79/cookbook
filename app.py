@@ -48,7 +48,7 @@ def add_recipe():
     # insert the new recipe
     recipes_db.insert_one({
       'recipe_name': request.form['recipe_name'],
-      'recipe_intro': request.form['recipe_intro'],
+      # 'recipe_intro': request.form['recipe_intro'],
       'short_description': request.form['short_description'],
       'ingredients': request.form['ingredients'],
       'method': request.form['method'],
