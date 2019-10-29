@@ -11,3 +11,11 @@ class AddRecipeForm(FlaskForm):
   image = StringField('Image Link (Full Path)', validators=[DataRequired()])
   submit = StringField('Update Recipe')
 
+class ConfirmDelete(FlaskForm):
+  recipe_name = StringField('Recipe Name', validators=[DataRequired()])
+  submit = SubmitField('Delete this Recipe')
+
+
+
+
+

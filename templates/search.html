@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Results for: <em>{{ query }}</em></h1>
+    <div class="row text-center">
+      {% for recipe in results %}
+          <div class="col l3 m6 s12">
+              <div class="card">
+                  <div class="card-image">
+                    <img src="{{ recipe.image }}">
+                    <span class="card-title">{{ recipe_name}}</span>
+                  </div>
+                  <div class="card-content">
+                    <p>{{ recipe.recipe_intro}}</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">Find Out More</a>
+                  </div>
+              </div> 
+          </div>
+      {% endfor %}
+    </div>
+{% endblock %}

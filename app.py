@@ -1,7 +1,7 @@
 import os
 import re
 import math
-from forms import AddRecipeForm
+from forms import AddRecipeForm, ConfirmDelete
 from config import Config
 # I need to add more functionality to flask, i.e. redirect, request etc
 from flask import Flask, render_template, redirect, request, url_for
@@ -75,7 +75,6 @@ def delete_recipe(recipe_id):
     })
     return redirect(url_for('index', title='Welsh Recipes Updated'))
   return render_template('delete_recipe.html', title='delete recipe', recipe=recipe_db, form=form)
-
 
 
 if __name__ == '__main__':
