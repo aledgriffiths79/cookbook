@@ -48,8 +48,7 @@ def add_recipe():
     # insert the new recipe
     recipes_db.insert_one({
       'recipe_name': request.form['recipe_name'],
-      # 'recipe_intro': request.form['recipe_intro'],
-      'short_description': request.form['short_description'],
+      'recipe_intro': request.form['recipe_intro'],
       'ingredients': request.form['ingredients'],
       'method': request.form['method'],
       'image': request.form['image'],
@@ -59,6 +58,8 @@ def add_recipe():
     })
     return redirect(url_for('index', title='New Recipe Added'))
   return render_template('add_recipe.html', title='add a recipe', form=form)
+
+
 
 @app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
 def delete_recipe(recipe_id):
@@ -75,6 +76,24 @@ def delete_recipe(recipe_id):
     })
     return redirect(url_for('index', title='Welsh Recipes Updated'))
   return render_template('delete_recipe.html', title='delete recipe', recipe=recipe_db, form=form)
+
+@app.route('/search')
+def search():
+  '''Search for a recipe'''
+  search_recipe = request.args['pattern']
+  # using regular expression setting option for any case
+  pattern = re.compile(r"[a-zA-Z0-9]+")
+  # find instances of the entered word in title, tags or ingredients
+  results = mongo.db.recipes.find({
+    '$or': [
+      {'title': pattern},
+      {'tags': pattern},
+      {'ingredients': pattern}
+    ]
+  })
+  return render_template('search.html', pattern=search_recipe, results=results)
+
+  
 
 
 if __name__ == '__main__':
