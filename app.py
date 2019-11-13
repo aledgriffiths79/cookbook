@@ -1,7 +1,7 @@
 import os
 import re
 import math
-from forms import AddRecipeForm, ConfirmDelete
+from forms import AddRecipeForm, ConfirmDelete, EditRecipeForm
 from config import Config
 # I need to add more functionality to flask, i.e. redirect, request etc
 from flask import Flask, render_template, redirect, request, url_for
@@ -59,7 +59,28 @@ def add_recipe():
     return redirect(url_for('index', title='New Recipe Added'))
   return render_template('add_recipe.html', title='add a recipe', form=form)
 
-
+@app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
+def edit_recipe(recipe_id):
+  recipe_db = mongo.db.recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
+  if request.method == 'GET':
+    form = EditRecipeForm(data=recipe_db)
+    return render_template('edit_recipe.html', recipe=recipe_db, form=form)
+  form = EditRecipeForm(request.form)
+  if request.method == 'GET':
+    recipes_db = mongo.db.recipes_db
+    recipes_db.update_one({
+      '_id_ ObjectId(recipe_id)'
+    }, {
+      '$set': {
+        'title': request.form['recipe_name'],
+        'recipe_intro': request.form['recipe_intro'], 
+        'ingredients': request.form['ingredients'],
+         'method': request.form['method'],
+         'image': request.form['image'],
+      }
+    })
+    return redirect(url_for('index', title='New Recipe Added'))
+  return render_template('edit_recipe.html', recipe=recipe_db, form=form)
 
 @app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
 def delete_recipe(recipe_id):
@@ -82,7 +103,7 @@ def search():
   '''Search for a recipe'''
   search_recipe = request.args['pattern']
   # using regular expression setting option for any case
-  pattern = re.compile(r"[a-zA-Z0-9]+")
+  pattern = re.compile(r"[a-zA-Z0-9\'\"\s]+")
   # find instances of the entered word in title, tags or ingredients
   results = mongo.db.recipes.find({
     '$or': [
