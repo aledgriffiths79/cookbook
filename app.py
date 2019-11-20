@@ -114,7 +114,28 @@ def search():
   })
   return render_template('search.html', pattern=search_recipe, results=results)
 
-  
+@app.route('/recipes')
+def recipes():
+  # number of recipes per page
+  per_page = 8
+  """You understand: so the request object may have arguments (also know as parameters) if it does it gets them if not it defaults to 1 """
+  page = int(request.args.get('page', 1))
+  # count total number of recipes
+  total = mongo.db.recipes.count_documents({})
+  # logic for what recipes to return
+  all_recipes = mongo.db.recipes.find().skip((page - 1)*per_page).limit(per_page)
+  pages = range(1, int(math.ceil(total / per_page)) + 1)
+  return render_template('recipes.html', recipes=all_recipes, page=page, pages=pages, total=total)
+
+@app.route('/recipe/<recipe_id>')
+def recipe(recipe_id):
+  '''Shows full recipe and increments view'''
+  mongo.db.recipes.find_one_and_update(
+    {'_id': ObjectId(recipe_id)},
+    {'$inc': {'views': 1}}
+  )
+  recipe_db = mongo.db.recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
+  return render_template('recipe.html', recipe=recipe_db)
 
 
 if __name__ == '__main__':
@@ -123,3 +144,6 @@ if __name__ == '__main__':
 
   # Production (Heroku)
   # app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)
+
+
+
