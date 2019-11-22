@@ -137,6 +137,10 @@ def recipe(recipe_id):
   recipe_db = mongo.db.recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
   return render_template('recipe.html', recipe=recipe_db)
 
+@app.errorhandler(404)
+def handle_404(exception):
+  return render_template('404.html', exception=exception)
+
 
 if __name__ == '__main__':
   # Local Host
