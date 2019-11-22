@@ -6,12 +6,25 @@
     <div class="row">
       <div class="col l6">
         <p>Views: {{ recipe.views }}</p>
-        
+        <img src="{{ recipe.image }}" alt="" class="card-image">
+        <hr>
+        <h5>{{ recipe.recipe_intro }}</h5>
+        <br>
+      </div>
+      <div class="col l6">
+        <h3>Ingredients</h3>
+        <p style='white-space: pre-wrap;'>{{ recipe.ingredients }}</p>
       </div>
     </div>
+    <!-- Not sure what to do here. Do i use a if condition so that if the  correct user is on his recipe page, does he have a choice to 'edit' or 'delete' there recipe. As i dont have this project built for username sprecification -->
 
-
-
-
+    <h3>Method</h3>
+    <p style="white-space: pre-wrap;">{{ recipe.method }}</p>
+    <p>Recipe submitted by: {{ recipe.user }}</p>
 
 {% endblock %}
+
+
+
+
+
