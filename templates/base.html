@@ -23,7 +23,7 @@
           <a href="{{ url_for('index') }}" class="brand-logo">Welsh Recipes</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="{% block nav_index %}{% endblock %}" href="{{ url_for('index') }}">Home</a></li>
-            <li><a class="{% block nav_recipe %}{% endblock %}" href="#">Recipes</a></li>
+            <li><a class="{% block nav_recipe %}{% endblock %}" href="{{ url_for('recipes')}}">Recipes</a></li>
             <li><a class="{% block nav_add_recipe %}{% endblock %}" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
           </ul>
         </div>
