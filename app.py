@@ -32,7 +32,7 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
   """Homepage has 4 recipes from DB that have been viewed the most"""
-  four_recipes = mongo.db.Recipes.find()#.sort([('views', DESCENDING)]).limit(1)
+  four_recipes = mongo.db.Recipes.find().sort([('views', DESCENDING)]).limit(1)
   return render_template('index.html', title='Home', recipes=four_recipes)
   # below is a setting stone to if my production site works
   # return 'Hello'
@@ -51,13 +51,13 @@ def add_recipe():
       'recipe_intro': request.form['recipe_intro'],
       'ingredients': request.form['ingredients'],
       'method': request.form['method'],
-      'image': request.form['image'],
+      # 'image': request.form['image'],
       'submit': request.form['submit'],
-      'views': 0
-
+      # 'views': 0
     })
     return redirect(url_for('index', title='New Recipe Added'))
-  return render_template('add_recipe.html', title='add a recipe', form=form)
+  else:
+    return render_template('add_recipe.html', title='add a recipe', form=form)
 
 @app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):

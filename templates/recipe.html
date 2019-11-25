@@ -16,6 +16,10 @@
         <p style='white-space: pre-wrap;'>{{ recipe.ingredients }}</p>
       </div>
     </div>
+    <div class="row float-right">
+      <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class='waves-effect waves-light btn'>Edit Recipe</a>
+      <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class='waves-effect waves-light btn'>Delete Recipe</a>
+    </div>
     <!-- Not sure what to do here. Do i use a if condition so that if the  correct user is on his recipe page, does he have a choice to 'edit' or 'delete' there recipe. As i dont have this project built for username sprecification -->
 
     <h3>Method</h3>
