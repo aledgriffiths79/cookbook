@@ -51,9 +51,9 @@ def add_recipe():
       'recipe_intro': request.form['recipe_intro'],
       'ingredients': request.form['ingredients'],
       'method': request.form['method'],
-      # 'image': request.form['image'],
+      'image': request.form['image'],
       'submit': request.form['submit'],
-      # 'views': 0
+      'views': 0
     })
     return redirect(url_for('index', title='New Recipe Added'))
   else:
