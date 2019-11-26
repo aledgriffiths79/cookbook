@@ -6,7 +6,26 @@
   height: 100%;
 }
 
-.jumbotron {
+/* .jumbotron {
   background-image: url('../images/spaghetti-bolognese-food-rustic-mince-meat-1418253-pxhere.com.jpg');
   background-size: cover;
+  min-height: 500px;
+} */
+
+/* div.image {
+  background-image: url('../images/spaghetti-bolognese-food-rustic-mince-meat-1418253-pxhere.com.jpg');
+  height: 100%;
+  background-size: cover;
+  min-height: 300px;
+
+} */
+
+.img-spagbol {
+  width: 300px;
+  height: 200px;
+  background-image: url('https://pxhere.com/en/photo/876384');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+
