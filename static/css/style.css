@@ -23,7 +23,7 @@
 .img-spagbol {
   width: 300px;
   height: 200px;
-  background-image: url('https://pxhere.com/en/photo/876384');
+  background-image: url(static\images\spag_bol.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
