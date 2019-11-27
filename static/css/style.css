@@ -6,11 +6,18 @@
   height: 100%;
 }
 
-/* .jumbotron {
-  background-image: url('../images/spaghetti-bolognese-food-rustic-mince-meat-1418253-pxhere.com.jpg');
+ .jumbotron {
+  min-height: 900px;
+  background-image: url(../images/intro_pic2.jpg);
   background-size: cover;
-  min-height: 500px;
-} */
+  background-repeat: no-repeat;
+  background-position: center right;
+  margin: 0;
+} 
+
+.jumbotron h2 {
+  margin: 0;
+}
 
 /* div.image {
   background-image: url('../images/spaghetti-bolognese-food-rustic-mince-meat-1418253-pxhere.com.jpg');
@@ -20,12 +27,9 @@
 
 } */
 
-.img-spagbol {
-  width: 300px;
-  height: 200px;
-  background-image: url(static\images\spag_bol.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+/* .img-spagbol { */
+  /* width: 300px;
+  height: 200px; */
+
 
 
