@@ -32,8 +32,8 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
   """Homepage has 4 recipes from DB that have been viewed the most"""
-  four_recipes = mongo.db.Recipes.find().sort([('views', DESCENDING)]).limit(1)
-  return render_template('index.html', title='Home', recipes=four_recipes)
+  four_recipes = mongo.db.Recipes.find().sort([('views', DESCENDING)]).limit(4)
+  return render_template('index.html', title='Home', Recipes=four_recipes)
   # below is a setting stone to if my production site works
   # return 'Hello'
 
@@ -61,7 +61,7 @@ def add_recipe():
 
 @app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
-  recipe_db = mongo.db.recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
+  recipe_db = mongo.db.Recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
   if request.method == 'GET':
     form = EditRecipeForm(data=recipe_db)
     return render_template('edit_recipe.html', recipe=recipe_db, form=form)
@@ -105,7 +105,7 @@ def search():
   # using regular expression setting option for any case
   pattern = re.compile(r"[a-zA-Z0-9\'\"\s]+")
   # find instances of the entered word in title, tags or ingredients
-  results = mongo.db.recipes.find({
+  results = mongo.db.Recipes.find({
     '$or': [
       {'title': pattern},
       {'tags': pattern},
@@ -121,20 +121,21 @@ def recipes():
   """You understand: so the request object may have arguments (also know as parameters) if it does it gets them if not it defaults to 1 """
   page = int(request.args.get('page', 1))
   # count total number of recipes
-  total = mongo.db.recipes.count_documents({})
+  total = mongo.db.Recipes.count_documents({})
   # logic for what recipes to return
-  all_recipes = mongo.db.recipes.find().skip((page - 1)*per_page).limit(per_page)
+  all_recipes = mongo.db.Recipes.find().skip((page - 1)*per_page).limit(per_page)
+  print("test = ", all_recipes)
   pages = range(1, int(math.ceil(total / per_page)) + 1)
   return render_template('recipes.html', recipes=all_recipes, page=page, pages=pages, total=total)
 
 @app.route('/recipe/<recipe_id>')
 def recipe(recipe_id):
   '''Shows full recipe and increments view'''
-  mongo.db.recipes.find_one_and_update(
+  mongo.db.Recipes.find_one_and_update(
     {'_id': ObjectId(recipe_id)},
     {'$inc': {'views': 1}}
   )
-  recipe_db = mongo.db.recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
+  recipe_db = mongo.db.Recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
   return render_template('recipe.html', recipe=recipe_db)
 
 @app.errorhandler(404)

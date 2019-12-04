@@ -27,14 +27,24 @@
           </ul>
         </div>
     </nav>
-    <!-- <div class="container"> -->
+    <div class="container">
         {% block content %}{% endblock %}
-    <!-- </div> -->
+    </div>
     <footer class="page-footer">
-        <div class="container">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="{{ url_for('index') }}" class="brand-logo">Welsh Recipes</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('recipes')}}">Recipes</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+          </ul>
+        </div>
+      </nav>
+        <!-- <div class="container">
           <div class="row">
             <div class="col l6 s12">
-              <h5 class="white-text">Welsh Recipes</h5>
+              <h5 class="brand-logo">Welsh Recipes</h5>
             </div>
             <div class="col l6 s12">
               <a class="grey-text text-lighten-3 nav_footer" href="{{url_for('index') }}">Home</a>
@@ -42,9 +52,9 @@
                 <a class="grey-text text-lighten-3 nav_footer" href="{{url_for('add_recipe')}}">Add Recipe</a>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="footer-copyright">
-          <div class="container">
+          <div class="container center-footer-copyright">
           © 2019 Copyright Welsh Recipes
           </div>
         </div>

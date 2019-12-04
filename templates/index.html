@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-{% block nav_index %}active{% endblock %}
+<!-- {% block nav_index %}active{% endblock %} -->
 {% block content %}
-
+    <!-- Jumbotron Header -->
     <header class="jumbotron">
       <div class="container">
         <h2 class="index_title">Welsh Recipes</h2>
@@ -21,12 +21,13 @@
         </div>
       </div>
     </header>
-    {% for recipe in recipes %}
-      <div class="col l3 m6 s12">
+    <div class="row text-center">
+    {% for recipe in Recipes %}
+      <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-image">
               <img src="{{ recipe.image }}">
-              <span class="card-title">{{ recipe_name}}</span>
+              <span class="card-title">{{ recipe.recipe_name}}</span>
             </div>
             <div class="card-content">
               <p>{{ recipe.recipe_intro}}</p>
@@ -37,6 +38,7 @@
         </div> 
       </div>
     {% endfor %}
+  </div>
 {% endblock %}
 
 <!-- {% for recipe in recipes %}  -->

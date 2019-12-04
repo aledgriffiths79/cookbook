@@ -45,23 +45,41 @@
 
 .find_recipe_label {
   font-weight: 600;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   
-}
-
-input {
-  font-size: 2rem;
 }
 
 .nav_footer {
   margin-left: 20px;
 }
 
-
 .input-field label.find_recipe_label {
   font-size: 2rem;
   top: -5px
 }
+
+.search_recipe input[type='text'] {
+  font-size: 2rem;
+}
+
+.page-footer {
+  padding-top: 0px;
+  background-color: #ee6e73;
+}
+
+
+
+.center-footer-copyright {
+  text-align: center;
+  color: #fff;
+}
+
+
+
+
+
+
+
 
 
 
