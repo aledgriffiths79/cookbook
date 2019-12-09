@@ -74,6 +74,29 @@
   color: #fff;
 }
 
+.recipe_name_decoration {
+  font-weight: 600;
+}
+
+.photo_ingredient {
+  padding-left: 30px;
+}
+
+.recipe_intro_text {
+  font-weight: 500;
+}
+
+.card .card-title {
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+
+
+
+
 
 
 

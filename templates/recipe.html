@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{{ recipe_name }}</h1>
+    <h1 class="recipe_name_decoration">{{ recipe.recipe_name }}</h1>
 
     <div class="row">
-      <div class="col l6">
+      <div class="col s12 m12 l6">
         <p>Views: {{ recipe.views }}</p>
         <img src="{{ recipe.image }}" alt="" class="card-image">
         <hr>
-        <h5>{{ recipe.recipe_intro }}</h5>
+        <h5 class="recipe_intro_text">{{ recipe.recipe_intro }}</h5>
         <br>
       </div>
-      <div class="col l6">
-        <h3>Ingredients</h3>
-        <p style='white-space: pre-wrap;'>{{ recipe.ingredients }}</p>
+      <div class="col s12 m12 l6">
+        <h3 class="photo_ingredient">Ingredients</h3>
+        <p class = "photo_ingredient" style='white-space: pre-wrap;'>{{ recipe.ingredients }}</p>
       </div>
     </div>
     <div class="row float-right">
