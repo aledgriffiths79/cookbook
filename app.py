@@ -104,6 +104,7 @@ def search():
   search_recipe = request.args.get('pattern')
   # using regular expression setting option for any case
   pattern = re.compile(r"[a-zA-Z0-9\'\"\s]+")
+  print(pattern)
   # find instances of the entered word in title, tags or ingredients
   results = mongo.db.Recipes.find({
     '$or': [
