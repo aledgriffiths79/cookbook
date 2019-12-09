@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% block nav_add_recipe %}active{% endblock %}
 {% block content %}
 
   <h3>Add Recipe</h3>
@@ -13,6 +12,8 @@
           <input id="recipe_name" name='recipe_name' type="text" class="validate">
           <label for="icon_prefix">Recipe Name</label>
         </div>
+      </div>
+      <div class="row">  
         <div class="input-field col s12">
           <i class="material-icons prefix">description</i>
           <textarea name="recipe_intro" id="recipe_intro" class="materialize-textarea"></textarea>

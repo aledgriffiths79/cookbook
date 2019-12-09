@@ -101,15 +101,14 @@ def delete_recipe(recipe_id):
 @app.route('/search')
 def search():
   '''Search for a recipe'''
-  search_recipe = request.args['pattern']
+  search_recipe = request.args.get('pattern')
   # using regular expression setting option for any case
   pattern = re.compile(r"[a-zA-Z0-9\'\"\s]+")
   # find instances of the entered word in title, tags or ingredients
   results = mongo.db.Recipes.find({
     '$or': [
-      {'title': pattern},
-      {'tags': pattern},
-      {'ingredients': pattern}
+      {'recipe_name': pattern},
+      {'ingredients': pattern},
     ]
   })
   return render_template('search.html', pattern=search_recipe, results=results)
