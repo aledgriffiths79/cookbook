@@ -58,6 +58,12 @@
   top: -5px
 }
 
+.input_line input[type='text'] {
+  height: 7rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 .search_recipe input[type='text'] {
   font-size: 2rem;
 }
@@ -97,7 +103,17 @@
 }
 
 .waves-effect {
-  margin-left: 5px
+  margin-left: 5px;
+  /* margin-top: 70px; */
+}
+
+.button_position {
+  margin-top: 70px;
+}
+
+.card .card-action:last-child {
+  text-align: center;
+  background-color:#ee6e73;
 }
 
 

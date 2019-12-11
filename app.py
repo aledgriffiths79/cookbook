@@ -98,21 +98,22 @@ def delete_recipe(recipe_id):
     return redirect(url_for('index', title='Welsh Recipes Updated'))
   return render_template('delete_recipe.html', title='delete recipe', recipe=recipe_db, form=form)
 
-@app.route('/search')
+'''Search for a recipe'''
+@app.route('/search', methods=['POST'])
 def search():
-  '''Search for a recipe'''
-  search_recipe = request.args.get('pattern')
+  query = request.form.get('query')
+  search_recipe = mongo.db.Recipes.find({'$text': {'$search': query}})
   # using regular expression setting option for any case
-  pattern = re.compile(r"[a-zA-Z0-9\'\"\s]+")
-  print(pattern)
+  # pattern = re.compile(r"[a-zA-Z0-9\'\"\s]+")
+  # print(pattern)
   # find instances of the entered word in title, tags or ingredients
-  results = mongo.db.Recipes.find({
-    '$or': [
-      {'recipe_name': pattern},
-      {'ingredients': pattern},
-    ]
-  })
-  return render_template('search.html', pattern=search_recipe, results=results)
+  # results = mongo.db.Recipes.find({
+  #   '$or': [
+  #     {'recipe_name': pattern},
+  #     {'ingredients': pattern},
+  #   ]
+  # })
+  return render_template('search.html', search_recipe=search_recipe, type='searched')
 
 @app.route('/recipes')
 def recipes():
