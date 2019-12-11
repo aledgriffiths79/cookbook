@@ -116,4 +116,6 @@
   background-color:#ee6e73;
 }
 
-
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: white;
+}
