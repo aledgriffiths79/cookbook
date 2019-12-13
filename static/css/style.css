@@ -119,3 +119,10 @@
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: white;
 }
+
+.bottom_margin_recipe {
+  margin-bottom: 2.1rem;
+}
+
+
+

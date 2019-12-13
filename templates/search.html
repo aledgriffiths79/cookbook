@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Results for: <em>{{ search_recipe }}</em></h1>
+    <h1>Results for: <em>{{ query }}</em></h1>
     <div class="row text-center">
-      {% for recipe in results %}
+      {% for recipe in search_recipe %}
           <div class="col l3 m6 s12">
               <div class="card">
                   <div class="card-image">

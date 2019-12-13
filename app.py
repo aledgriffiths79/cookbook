@@ -113,7 +113,7 @@ def search():
   #     {'ingredients': pattern},
   #   ]
   # })
-  return render_template('search.html', search_recipe=search_recipe, type='searched')
+  return render_template('search.html', search_recipe=search_recipe, query=query)
 
 @app.route('/recipes')
 def recipes():
