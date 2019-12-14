@@ -20,20 +20,19 @@
         </div>
       </div>
     </header>
-    <div class="row text-center">
+    <div class="row flex text-center">
     {% for recipe in Recipes %}
       <div class="col s12 m6 l3">
-        <div class="card">
+        <div class="card card-image">
             <div class="card-image">
               <img src="{{ recipe.image }}">
-              <!-- <span class="card-title">{{ recipe.recipe_name}}</span> -->
             </div>
             <div class="card-title">{{ recipe.recipe_name}}</div>
             <div class="card-content">
               <p>{{ recipe.recipe_intro}}</p>
             </div>
-            <div class="card-action">
-              <a href ="{{ url_for('recipe', recipe_id=recipe._id) }}">Find Out More</a>
+            <div class="card-action find_out_more_button_margin">
+              <a class="button_margin" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Find Out More</a>
             </div>
         </div> 
       </div>
