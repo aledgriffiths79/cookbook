@@ -88,14 +88,14 @@ def delete_recipe(recipe_id):
   recipe_db = mongo.db.Recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
   if request.method == 'GET':
     form = ConfirmDelete(data=recipe_db)
-    return render_template('delete_recipe.html', title='Delete Recipe', form=form)
+    return render_template('delete_recipe.html', title='Delete Recipe', context=recipe_db, form=form)
   form = ConfirmDelete(request.form)
-  if request.method == 'GET':
+  if request.method == 'POST':
     recipe_db = mongo.db.Recipes
     recipe_db.delete_one({
       '_id': ObjectId(recipe_id),
     })
-    return redirect(url_for('index', title='Welsh Recipes Updated'))
+    return redirect(url_for('index', condition='Welsh Recipes Updated'))
   return render_template('delete_recipe.html', title='delete recipe', recipe=recipe_db, form=form)
 
 '''Search for a recipe'''
