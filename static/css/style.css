@@ -5,14 +5,21 @@
 
 .card {
   height: 100%;
+  position: relative !important;
 }
 
+.card-action {
+  position: absolute !important;
+  bottom: 0 !important;
+}
+
+
 .jumbotron {
-  min-height: 900px;
+  /* min-height: 900px; */
   background-image: url(../images/intro_pic2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center right;
+  background-position: bottom;
   margin-top: 0.5rem;
 } 
 
@@ -21,12 +28,12 @@
 }
 
 .index_title {
-  /* padding-left: 60px; */
+  padding-left: 60px;
   padding-top: 70px;
-  font-size: 100px;
-  font-weight: 280;
+  font-size: 4.5rem;
+  /* font-weight: 300; */
   padding-bottom: 70px;
-
+  text-align: left;
 }
 
 .nav-wrapper {
@@ -60,9 +67,10 @@
 }
 
 .input_line input[type='text'] {
-  height: 7rem;
+  height: 3rem;
   font-size: 2rem;
   font-weight: 600;
+  margin-top: 4.2rem
 }
 
 .search_recipe input[type='text'] {
@@ -100,17 +108,44 @@
   text-transform: capitalize;
 }
 
+.recipe_title {
+  text-transform: capitalize;
+}
+
 .input-field .prefix {
   font-size: 40px;
 }
 
+.input-field.col label {
+  left: .75rem;
+  padding-left: 60px;
+}
+
+input[type=text]:not(.browser-default) {
+  border: solid 1px;
+  color: grey;
+  margin-left: 20px;
+  height: 40px;
+  font-size: 1.8rem;
+  border-radius: .35rem;
+}
+
+ .text_search_padding {
+  padding-left: .75rem;
+}
+
 .waves-effect {
-  margin-left: 5px;
-  /* margin-top: 70px; */
+  margin-top: -10px;
+  height: 40px;
 }
 
 .button_position {
-  margin-top: 70px;
+  margin-top: 65px;
+  margin-left: -1px;
+}
+
+.search_input_position {
+  margin-top: 65px !important;
 }
 
 .card .card-action:last-child {
@@ -135,10 +170,31 @@
   color: #daea81fa;
 }
 
+.card .card-action {
+  width: -webkit-fill-available;
+}
+
+
 nav ul a:hover {
   background-color: rgba(0,0,0,0.1);
   color: #daea81fa;
 }
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 85%;
+}}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 85%;
+}}
+
+
+
+
+
+
 
 
 
