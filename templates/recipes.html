@@ -5,10 +5,10 @@
         <h1>Recipes</h1>
       </div>
       <div class="input_line col s6 m6 l3">
-        <form action="{{ url_for('search') }}" method="POST"> <input type="text" name="query" class="search_input_position" />
+        <form action="{{ url_for('search') }}" method="POST"> <input type="text" name="query" class="text_search_padding" />
       </div>
       <div class="col s6 m6 l3">
-        <button class="btn waves-effect waves-light button_position" type="submit" name="action">
+        <button class="btn waves-effect waves-light button_position recipes_search_box" type="submit" name="action">
             Find Recipes!
             <i class="material-icons right">send</i>
         </button>
@@ -28,9 +28,9 @@
               <img src="{{ recipe.image }}">
               <!-- <span class="card-title">{{ recipe.recipe_name}}</span> -->
             </div>
-            <div class="card-title">{{ recipe.recipe_name}}</div>
+            <div class="card-title">{{ recipe.recipe_name|truncate(150)}}</div>
             <div class="card-content">
-              <p>{{ recipe.recipe_intro}}</p>
+              <p>{{ recipe.recipe_intro|truncate(50)}}</p>
             </div>
             <div class="card-action">
               <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"

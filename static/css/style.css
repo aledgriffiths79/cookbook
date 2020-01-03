@@ -70,7 +70,30 @@
   height: 3rem;
   font-size: 2rem;
   font-weight: 600;
-  margin-top: 4.2rem
+  margin-top: 65px;
+}
+
+.textarea-fontsize {
+  font-size: 25px !important;
+  /* font-weight: 600; */
+  font-family: -webkit-pictograph;
+  padding-left: 5px !important;
+}
+
+.input-field.col .prefix ~ label, .input-field.col .prefix ~ .validate ~ label {
+  padding-left: 10px;
+}
+
+.input-field .prefix ~ textarea {
+  padding-bottom: 0px;
+}
+
+.input-field .prefix ~ input {
+  font-size: 25px !important;
+  /* font-weight: 300 !important; */
+  padding-left: 5px !important;
+  padding-bottom: 10px !important;
+  font-family: -webkit-pictograph !important;
 }
 
 .search_recipe input[type='text'] {
@@ -122,21 +145,33 @@
 }
 
 input[type=text]:not(.browser-default) {
-  border: solid 1px;
+  /* border: solid 1px;
   color: grey;
   margin-left: 20px;
   height: 40px;
   font-size: 1.8rem;
-  border-radius: .35rem;
+  border-radius: .35rem; */
 }
 
  .text_search_padding {
-  padding-left: .75rem;
+  padding-left: .75rem !important;
+  border: solid 1px !important;
+  color: grey !important;
+  margin-left: 20px !important;
+  height: 39px !important;
+  font-size: 1.8rem !important;
+  border-radius: .35rem !important;
+  font-family: -webkit-pictograph;
 }
 
 .waves-effect {
   margin-top: -10px;
   height: 40px;
+  margin-left: 10px;
+}
+
+.recipes_search_box {
+  margin-left: 10px !important;
 }
 
 .button_position {
