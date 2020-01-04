@@ -144,14 +144,14 @@
   padding-left: 60px;
 }
 
-input[type=text]:not(.browser-default) {
+/* input[type=text]:not(.browser-default) { */
   /* border: solid 1px;
   color: grey;
   margin-left: 20px;
   height: 40px;
   font-size: 1.8rem;
   border-radius: .35rem; */
-}
+/* } */
 
  .text_search_padding {
   padding-left: .75rem !important;

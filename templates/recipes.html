@@ -30,7 +30,7 @@
             </div>
             <div class="card-title">{{ recipe.recipe_name|truncate(50) }}</div>
             <div class="card-content">
-              <p> {{ recipe.recipe_intro }} {{ info }} </p>
+              <p> {{ recipe.recipe_intro }}</p>
             </div>
             <div class="card-action">
               <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"
@@ -40,20 +40,30 @@
         </div>
       {% endfor %}
     </div>
-    <!-- <div>
-      <nav aria-label="Search Results Pages">
-        <ul class="pagination">
-          {% for pagenum in pages %}
+    <!-- <div role="navigation" aria-label="Search Results Page">
+      <ul class="paginaation">
+        {% for pagenum in pages %}
               {% if pagenum == page %}
-                  <li class="active"></li>
+                  <li class="active">{{ pagenum }}</li>
               {% else %}
-                  <li class="page-item"><a class="page-link" href="{{ url_for('recipes', page=pagenum) }}">{{ pagenum }}</a>
-                  </li>
+              <li class="waves-effect"><a href="{{ url_for('recipes', page=pagenum) }}">{{ pagenum }}</a></li>
               {% endif %}
-          {% endfor %}
-        </ul>
-      </nav>
+        {% endfor %}
+      </ul>
     </div> -->
+    <div role="navigation" aria-label="Search Results Page">
+      <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect"><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+      </ul>
+    </div>
+
+    
 {% endblock %}
 
 
