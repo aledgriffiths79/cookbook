@@ -28,9 +28,9 @@
               <img src="{{ recipe.image }}">
               <!-- <span class="card-title">{{ recipe.recipe_name}}</span> -->
             </div>
-            <div class="card-title">{{ recipe.recipe_name|truncate(150)}}</div>
+            <div class="card-title">{{ recipe.recipe_name|truncate(50) }}</div>
             <div class="card-content">
-              <p>{{ recipe.recipe_intro|truncate(50)}}</p>
+              <p> {{ recipe.recipe_intro }} {{ info }} </p>
             </div>
             <div class="card-action">
               <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"
