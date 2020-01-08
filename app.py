@@ -125,11 +125,11 @@ def recipes():
   total = mongo.db.Recipes.count_documents({})
   # logic for what recipes to return
   # all_recipes = mongo.db.Recipes.find().skip((page - 1)*per_page).limit(per_page)
-  all_recipes = mongo.db.Recipes.find()
+  all_recipes = mongo.db.Recipes.find().skip((page - 1)*per_page).limit(per_page)
   # info = (data[:75] + '..') if len(data) > 75 else data
   print("test = ", all_recipes)
   pages = range(1, int(math.ceil(total / per_page)) + 1)
-  return render_template('recipes.html', Recipes=all_recipes, page=page, pages=pages, total=total) #info=info
+  return render_template('recipes.html', Recipes=all_recipes, page=page, pages=pages, total=total, per_page=per_page) #info=info
 
 @app.route('/recipe/<recipe_id>')
 def recipe(recipe_id):

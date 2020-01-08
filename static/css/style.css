@@ -225,7 +225,28 @@ nav ul a:hover {
     width: 85%;
 }}
 
+.card .card-content p {
+  margin: 0;
+  color: inherit;
+  margin-bottom: 20px;
+}
 
+.margin_pagination {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.gap_between_image {
+  margin-bottom: 10px !important;
+}
+
+ul:not(.browser-default) {
+  padding-left: 0;
+  list-style-type: none;
+  /* padding-bottom: 20px; */
+  /* padding-top: 20px; */
+  text-align: center;
+}
 
 
 
