@@ -39,18 +39,18 @@
         </div>
       {% endfor %}
     </div>
-    <!-- <div role="navigation" aria-label="Search Results Page">
-      <ul class="paginaation">
+    <div role="navigation" aria-label="Search Results Page">
+      <ul class="pagination margin_pagination">
         {% for pagenum in pages %}
               {% if pagenum == page %}
                   <li class="active">{{ pagenum }}</li>
               {% else %}
-              <li class="waves-effect"><a href="{{ url_for('recipes', page=pagenum) }}">{{ pagenum }}</a></li>
+              <li><a href="{{ url_for('recipes', page=pagenum) }}">{{ pagenum }}</a>
               {% endif %}
         {% endfor %}
       </ul>
-    </div> -->
-    <div role="navigation" aria-label="Search Results Page">
+    </div>
+    <!-- <div role="navigation" aria-label="Search Results Page">
       <ul class="pagination margin_pagination">
         <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
         <li class="active"><a href="#!">1</a></li>
@@ -60,7 +60,7 @@
         <li class="waves-effect teal"><a href="#!">5</a></li>
         <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
       </ul>
-    </div>
+    </div> -->
 
     
 {% endblock %}

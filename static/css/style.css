@@ -248,6 +248,10 @@ ul:not(.browser-default) {
   text-align: center;
 }
 
+.pagination li.active {
+  background-color: #ee6e73;
+  width: 2rem;
+}
 
 
 
