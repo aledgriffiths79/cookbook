@@ -41,13 +41,15 @@
     </div>
     <div role="navigation" aria-label="Search Results Page">
       <ul class="pagination margin_pagination">
+        <li><a href="{{ url_for('recipes', page=page-1) }}"><i class="material-icons">chevron_left</i></a></li>
         {% for pagenum in pages %}
-              {% if pagenum == page %}
-                  <li class="active">{{ pagenum }}</li>
-              {% else %}
+          {% if pagenum == page %}
+              <li class="active">{{ pagenum }}</li>
+          {% else %}
               <li><a href="{{ url_for('recipes', page=pagenum) }}">{{ pagenum }}</a>
-              {% endif %}
+          {% endif %}
         {% endfor %}
+        <li><a href="{{ url_for('recipes', page=page+1) }}"><i class="material-icons">chevron_right</i></a></li>
       </ul>
     </div>
     <!-- <div role="navigation" aria-label="Search Results Page">

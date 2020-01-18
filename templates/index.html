@@ -5,12 +5,12 @@
       <!-- <div class="container"> -->
         <h2 class="index_title">Recipes</h2>
         <div class="row">
-          <div class="search_recipe input-field col s12 m6 l3">
+          <div class="search_recipe input-field col s6 l3">
             <form action="{{ url_for('search') }}" method="POST">
-              <input class="text_search_padding" name="query" type="text">
+              <input class="index_searchbox text_search_padding" name="query" type="text">
               <!-- <label class="active find_recipe_label" for="recipe_name">Recipe Name</label> -->
           </div>
-          <div class="find_recipes_button col s12 m6">
+          <div class="find_recipes_button col s6 l3">
             <button class="btn waves-effect waves-light" type="submit" 
                 name="action">Find Recipes
                 <i class="material-icons right">send</i>

@@ -21,6 +21,8 @@
   background-repeat: no-repeat;
   background-position: bottom;
   margin-top: 0.5rem;
+  max-width: 100%;
+  height: auto;
 } 
 
 .jumbotron h2 {
@@ -167,6 +169,7 @@
 .waves-effect {
   margin-top: -10px;
   height: 40px;
+  /* margin-left: 20px; */
   margin-left: 10px;
 }
 
@@ -186,6 +189,7 @@
 .card .card-action:last-child {
   text-align: center;
   background-color:#ee6e73;
+  margin-bottom: 0px;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
@@ -253,6 +257,63 @@ ul:not(.browser-default) {
   width: 2rem;
 }
 
+@media (max-width: 600px) {
+  div.card-action:last-child {
+    margin-bottom: 10px;
+  }
+  div.card .card-content {
+    padding-bottom: 18px;
+  }
+  input[type=text]:not(.browser-default) {
+    /* margin-left: 0px !important; */
+    font-family: sans-serif !important;
+  }
+  button.waves-effect {
+    margin-left: -3px;
+    margin-right: 5px;
+    font-size: 13.3px;
+  }  
+  .card .card-action:last-child {
+    padding-top: 0px;
+    /* margin-bottom: 5px; */
+  }
+  .index_title {
+    padding-left: 0px !important;
+    text-align: center;
+    font-size: 60px;
+  }
+  .move_button_addrecipe {
+    margin-left: 5px !important;
+  }
+  .margin_input_addrecipe {
+    margin-left: 40px !important;
+    padding-left: 5px !important;
+    padding-bottom: 0px !important;
+    padding-top: 11.2px !important;
+  }
+  .index_searchbox {
+    margin-left: 5px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .input_line input[type='text'] {
+    height: 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-left: 0px!important;
+}
+.button_position {
+  margin-left: -10px !important;
+  margin-top: 0px;
+}
+
+}
+/* 
+input[type=text]:not(.browser-default) {
+  padding-right: 10px !important;
+} */
 
 
 
