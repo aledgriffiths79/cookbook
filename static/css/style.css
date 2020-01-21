@@ -121,6 +121,11 @@
 
 .recipe_name_decoration {
   font-weight: 600;
+  text-align: center;
+}
+
+.add_recipe_title, .edit_recipe_title {
+  text-align: center;
 }
 
 .photo_ingredient {
@@ -270,6 +275,9 @@ ul:not(.browser-default) {
   div.card-action:last-child {
     margin-bottom: 10px;
   }
+  .photo_ingredient {
+    padding-left: 0px;
+  }
   div.card .card-content {
     padding-bottom: 18px;
   }
@@ -321,6 +329,9 @@ ul:not(.browser-default) {
     font-weight: 600;
     margin-top: 0px;
     margin-left: 0px!important;
+}
+.photo_ingredient {
+  padding-left: 0px;
 }
 .button_position {
   margin-left: -10px !important;
