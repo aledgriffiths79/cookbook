@@ -22,7 +22,3 @@ class ConfirmDelete(FlaskForm):
   recipe_name = StringField('Recipe Name', validators=[DataRequired()])
   submit = SubmitField('Delete this Recipe')
 
-
-
-
-

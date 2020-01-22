@@ -3,13 +3,11 @@ import re
 import math
 from forms import AddRecipeForm, ConfirmDelete, EditRecipeForm
 from config import Config
-# I need to add more functionality to flask, i.e. redirect, request etc
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo, DESCENDING
 from pymongo import MongoClient
 from bson.objectid import ObjectId
-# dont think i need flash (message flashing (which is used via flask)) as the flashing system basically makes it possible to record a message at the end of a request and access it next request and only next request = usually used for remebering login and password
-# Flask talking to mongo
+
 app = Flask(__name__)
 
 # add configuration to our flask application
@@ -28,6 +26,7 @@ app.config['SECRET_KEY'] = 'nwoiefdjowijefoiwjefoiwefjowiefj'
 mongo = PyMongo(app)
 
 # Decorators
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -37,11 +36,12 @@ def index():
   # below is a setting stone to if my production site works
   # return 'Hello'
 
+# Add recipe file
+
 @app.route('/add_recipe', methods=['GET', 'POST']) #routing identifier will have the same name as the function name (its a choice as its easier for a beginner)
 def add_recipe():
   """Creates a recipe and enters into recipe collection"""
   form = AddRecipeForm(request.form)
-  # if form.validate_on_submit(): THIS 1 DOESNT WORK. WHY?
   if request.method=='POST':
     # set the collection
     recipes_db = mongo.db.Recipes
@@ -58,6 +58,8 @@ def add_recipe():
     return redirect(url_for('index', title='New Recipe Added'))
   else:
     return render_template('add_recipe.html', title='add a recipe', form=form)
+
+# Edit Recipe
 
 @app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
@@ -82,6 +84,8 @@ def edit_recipe(recipe_id):
     return redirect(url_for('index', title='New Recipe Added'))
   return render_template('edit_recipe.html', recipe=recipe_db, form=form)
 
+# Delete recipe file
+
 @app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
 def delete_recipe(recipe_id):
   '''Delete a recipe with added confirmation'''
@@ -98,28 +102,21 @@ def delete_recipe(recipe_id):
     return redirect(url_for('index', condition='Welsh Recipes Updated'))
   return render_template('delete_recipe.html', title='delete recipe', recipe=recipe_db, form=form)
 
-'''Search for a recipe'''
+# Search for a recipe
+
 @app.route('/search', methods=['POST'])
 def search():
   query = request.form.get('query')
   search_recipe = mongo.db.Recipes.find({'$text': {'$search': query}})
-  # using regular expression setting option for any case
-  # pattern = re.compile(r"[a-zA-Z0-9\'\"\s]+")
-  # print(pattern)
-  # find instances of the entered word in title, tags or ingredients
-  # results = mongo.db.Recipes.find({
-  #   '$or': [
-  #     {'recipe_name': pattern},
-  #     {'ingredients': pattern},
-  #   ]
-  # })
   return render_template('search.html', search_recipe=search_recipe, query=query)
+
+# Recipes file
 
 @app.route('/recipes')
 def recipes():
   # number of recipes per page
   per_page = 8
-  """You understand: so the request object may have arguments (also know as parameters) if it does it gets them if not it defaults to 1 """
+  """request object may have arguments (also know as parameters) if it does it gets them if not it defaults to 1 """
   page = int(request.args.get('page', 1))
   # count total number of recipes
   total = mongo.db.Recipes.count_documents({})
@@ -142,7 +139,6 @@ def recipe(recipe_id):
 @app.errorhandler(404)
 def handle_404(exception):
   return render_template('404.html', exception=exception)
-
 
 if __name__ == '__main__':
   # Local Host
