@@ -248,6 +248,9 @@ nav ul a:hover {
   color: inherit;
   margin-bottom: 20px;
 }
+.find_out_more_margin {
+  margin-bottom: 0px !important;
+}
 
 .margin_pagination {
   padding-top: 20px;
@@ -291,7 +294,7 @@ ul:not(.browser-default) {
     font-size: 13.3px;
   }  
   .card .card-action:last-child {
-    padding-top: 0px;
+    padding-top: 12px;
     margin-bottom: 5px;
   }
   .index_title {

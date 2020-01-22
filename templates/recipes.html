@@ -31,7 +31,7 @@
             <div class="card-content">
               <p> {{ recipe.recipe_intro|truncate(200, True)|safe }}</p>
             </div>
-            <div class="card-action">
+            <div class="card-action find_out_more_margin">
               <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"
                 >Find Out More</a>
             </div>
