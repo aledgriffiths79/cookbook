@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% block content %}
     <!-- Jumbotron Header -->
@@ -27,7 +28,7 @@
               <div class="card-content">
                 <p>{{ recipe.recipe_intro}}</p>
               </div>
-              <div class="card-action find_out_more_button_margin">
+              <div class="card-action find_out_more_button_margin height_card">
                 <a class="button_margin" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Find Out More</a>
               </div>
           </div> 

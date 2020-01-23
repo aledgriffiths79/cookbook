@@ -137,6 +137,7 @@ def recipe(recipe_id):
   return render_template('recipe.html', recipe=recipe_db)
 
 @app.errorhandler(404)
+
 def handle_404(exception):
   return render_template('404.html', exception=exception)
 
