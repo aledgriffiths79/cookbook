@@ -2,7 +2,7 @@ import os
 import re
 import math
 from forms import AddRecipeForm, ConfirmDelete, EditRecipeForm
-from config import Config
+# from config import Config
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo, DESCENDING
 from pymongo import MongoClient
