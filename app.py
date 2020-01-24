@@ -3,10 +3,15 @@ import re
 import math
 from forms import AddRecipeForm, ConfirmDelete, EditRecipeForm
 # from config import Config
+# after deleting the above import Config, now my application is running on heroku 
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo, DESCENDING
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+# the following is for the environment variable
+from os import path
+if path.exists('env.py'):
+  import env
 
 app = Flask(__name__)
 
