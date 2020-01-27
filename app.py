@@ -18,7 +18,7 @@ app = Flask(__name__)
 # add configuration to our flask application
 
 app.config["MONGO_DBNAME"] = 'CookBook'
-# app.config["MONGO_URI"] = 'mongodb+srv://agriffiths79:motoisfun38@cluster-cookbook-1e5pm.mongodb.net/CookBook?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://agriffiths79:motoisfun38@cluster-cookbook-1e5pm.mongodb.net/CookBook?retryWrites=true&w=majority'
 
 # i shouldnt upload secret keys to github thus here too, but i can leave it here for now. When i come to upload this application onto the production server (heroku), its then i put it into environment variables inside heroku itself 
 app.config['SECRET_KEY'] = 'nwoiefdjowijefoiwjefoiwefjowiefj'
