@@ -16,9 +16,11 @@ if path.exists('env.py'):
 app = Flask(__name__)
 
 # add configuration to our flask application
+# Beacuse you set the value of MONGO_DBNAME to be "CookBook" in your environment variables. So os.getenv("MONGO_DBNAME")  will return "CookBook" as a string. the only difference is you hard coded it into line 20, rather than getting it from the environment.
 app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
 # app.config['MONGO_DBNAME'] = 'CookBook'
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
 # i shouldnt upload secret keys to github thus here too, but i can leave it here for now. When i come to upload this application onto the production server (heroku), its then i put it into environment variables inside heroku itself 
 
