@@ -1,7 +1,13 @@
 # CookBook
 -----------
 
+### Milestone Project 3: Practical Python and Data Centric Development
 
+In this project, I will build a full-stack site that allows users to create, read, update, and delete (CRUD) food recipes. Its value or purpose is to allow users to share there own recipes with the community, and benefit from having convenient access to the recipes provided by all other users.
+
+I will build the application with the idea of allowing easy access to cooking recipes to all users in a manner that is visually appealing and user friendly. It will be simple to navigate and understand with features for users to locate specific recipes based on recipe fields.  
+
+This project can be viewed [here](https://cookbook2020.herokuapp.com/)
 
 
 ## User Experience Design
@@ -56,4 +62,38 @@ This particular plane focuses on:
 Its important as its convention that when its available/accessible you the developer provide iconography and navigation thats both simple to learn and something the user is used to seeing from other websites. 
 
 In this projects directory is a folder **wireframe**. In that folder i have designed a mockup of my inital plan for the project. I have designed it so that i have the flexibility if needed to alter something, whether it be the functionality, the color scheme, fonts etc as i progress through the project. Its not good practice to set anything in stone from the start but important to have an idea of the structure of the application. 
+
+## Credits
+
+### Content
+  + I used code from the documentation in mongo DB for my app.py file for a lot of the methods and the general syntax in development of the application. I also used stackoverflow for pagination and for search queries. As well as the assistance of the sites mentioned i also had advice by some of the tutors for how to look up for solutions to problems.
+
+### Media
+
+  + I added a background image to the index page from [pxhere](https://pxhere.com/)
+
+  + To have the application up and running i added recipes and recipe images myself as part of testing. I attained this from [bbcgoodfood](https://www.bbcgoodfood.com/)
+
+
+### Acknowledgements
+
+  + I received some ideas from the bbc goodfood website for my application with its structure
+
+  + My **Mentor** for his guidance at the beginning, middle and end of the project
+
+  + And to the **Tuturs** at [CodeInstitute](https://codeinstitute.net/)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
