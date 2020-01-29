@@ -81,7 +81,7 @@ In this projects directory is a folder **wireframe**. In that folder i have desi
 
   + My **Mentor** for his guidance at the beginning, middle and end of the project
 
-  + And to the **Tuturs** at [CodeInstitute](https://codeinstitute.net/)  
+  + And to the **Tuturs** at [Code Institute](https://codeinstitute.net/)  
 
 
 
