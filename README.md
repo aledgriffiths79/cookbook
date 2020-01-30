@@ -63,6 +63,15 @@ Its important as its convention that when its available/accessible you the devel
 
 In this projects directory is a folder **wireframe**. In that folder i have designed a mockup of my inital plan for the project. I have designed it so that i have the flexibility if needed to alter something, whether it be the functionality, the color scheme, fonts etc as i progress through the project. Its not good practice to set anything in stone from the start but important to have an idea of the structure of the application. 
 
+## Deployment
+
+My application was coded in the IDE: **Virtual Studio Code**, a local GIT directory was used for version control and then uploaded to GITHUB.
+This site is hosted using Heroku and is deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. 
+
+In order for the success of the deployment version i would create an environment variable file named env.py. In this file i will store the MongoDB configuration key and values in order to keep the production database connection string private. A MongoDB database was used as the place to store data for this application. I also need to store these configuration variables in my **config vars** in my heroku settings which acts like a security confirmation in accordance with the values i have set in my env.py file. As these variables and its values are confidential they must not be seen by the public, therefore, i have created a file called .gitignore. In this file will be a list of files that i have within the applications repository that i dont want to share to github/public. And one of those files and its data is the environment variable file, **env.py**. 
+
+In the development phase of my application i still needed to keep the security of my configuration variables private, because even though my application wasnt in deployment at that stage, in order to work on the development stage i still had to upload my code to github for the changes in my application to take place.  
+
 ## Credits
 
 ### Content
@@ -81,7 +90,7 @@ In this projects directory is a folder **wireframe**. In that folder i have desi
 
   + My **Mentor** for his guidance at the beginning, middle and end of the project
 
-  + And to the **Tuturs** at [Code Institute](https://codeinstitute.net/)  
+  + And to the **Tutors** at [Code Institute](https://codeinstitute.net/)  
 
 
 
