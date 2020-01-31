@@ -63,6 +63,19 @@ Its important as its convention that when its available/accessible you the devel
 
 In this projects directory is a folder **wireframe**. In that folder i have designed a mockup of my inital plan for the project. I have designed it so that i have the flexibility if needed to alter something, whether it be the functionality, the color scheme, fonts etc as i progress through the project. Its not good practice to set anything in stone from the start but important to have an idea of the structure of the application. 
 
+## Technologies Used
+
+  + Python
+    + Python is used for the back-end functionality of this project
+  + HTML5
+    + Used to construct the structure of the front-end of the project
+  + CSS/Materialize
+    + Provides styling for the pages and all content
+  + Mongo
+    + Used for storing data and is easy to add or change fields 
+  + Flask
+    + Flask provides libraries, modules and tools to help build my webb application. It doesnt depend on other libraries, hence why it is referred to a microframework
+
 ## Deployment
 
 My application was coded in the IDE: **Virtual Studio Code**, a local GIT directory was used for version control and then uploaded to GITHUB.
