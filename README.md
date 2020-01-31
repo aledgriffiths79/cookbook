@@ -61,7 +61,12 @@ This particular plane focuses on:
 
 Its important as its convention that when its available/accessible you the developer provide iconography and navigation thats both simple to learn and something the user is used to seeing from other websites. 
 
-In this projects directory is a folder **wireframe**. In that folder i have designed a mockup of my inital plan for the project. I have designed it so that i have the flexibility if needed to alter something, whether it be the functionality, the color scheme, fonts etc as i progress through the project. Its not good practice to set anything in stone from the start but important to have an idea of the structure of the application. 
+In this projects directory is a folder **wireframe**. In that folder i have designed a mockup of my inital plan for the project. I have designed it so that i have the flexibility if needed to alter something, whether it be the functionality, the color scheme, fonts etc as i progress through the project. Its not good practice to set anything in stone from the start but important to have an idea of the structure of the application.
+
+Here is a list of my wireframes with ideas to building this project
+  + [index page](https://raw.githubusercontent.com/aledgriffiths79/cookbook/master/wireframe/home-page.png)
+  + [recipes page](https://raw.githubusercontent.com/aledgriffiths79/cookbook/master/wireframe/Recipes.png)
+  + [add/edit recipe page](https://raw.githubusercontent.com/aledgriffiths79/cookbook/master/wireframe/form-recipes.png)
 
 ## Technologies Used
 
@@ -71,6 +76,7 @@ In this projects directory is a folder **wireframe**. In that folder i have desi
     + Used to construct the structure of the front-end of the project
   + CSS/Materialize
     + Provides styling for the pages and all content
+    + Materialize is a modern responsive CSS framework based on Material Design by Google.
   + Mongo
     + Used for storing data and is easy to add or change fields 
   + Flask
