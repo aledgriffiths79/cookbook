@@ -68,6 +68,14 @@ Here is a list of my wireframes with ideas to building this project
   + [recipes page](https://raw.githubusercontent.com/aledgriffiths79/cookbook/master/wireframe/Recipes.png)
   + [add/edit recipe page](https://raw.githubusercontent.com/aledgriffiths79/cookbook/master/wireframe/form-recipes.png)
 
+## Features
+
+The project has multiple pages that provide different features and options.
+  + **index.html** is the base of the project and provides a navigation bar, a recipe search bar, and the 4 most looked at recipes in the application with a feature that allows you to go in more specific about the recipe, i.e. ingredients, method etc
+  + **recipes.html** provides a base to all the recipes that have been uploaded in the application. Here also you can look at any recipe that you like and look more into detail about that recipe
+  + **addrecipe.html** is where you upload a recipe. It allows users to add there recipe by filling out a form
+  + **recipe.html** when you look more in detail on a recipe you will arrive at this page. In this page aswell as the recipe method, ingredients, and recipe introduction it provides you a choice to edit that recipe or delete the recipe. 
+
 ## Technologies Used
 
   + Python
