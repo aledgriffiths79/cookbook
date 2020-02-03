@@ -75,9 +75,9 @@ def edit_recipe(recipe_id):
     return render_template('edit_recipe.html', recipe=recipe_db, form=form)
   form = EditRecipeForm(request.form)
   if request.method == 'GET':
-    recipes_db = mongo.db.recipes_db
+    recipes_db = mongo.db.recipes
     recipes_db.update_one({
-      '_id_ ObjectId(recipe_id)'
+      '_id_': ObjectId(recipe_id)
     }, {
       '$set': {
         'title': request.form['recipe_name'],
@@ -149,10 +149,10 @@ def handle_404(exception):
 
 if __name__ == '__main__':
   # Local Host
-  # app.run(host='127.0.0.1', debug=True)
+  app.run(host='127.0.0.1', debug=True)
 
   # Production (Heroku)
-  app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)
+  # app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)
 
 
 
