@@ -2,9 +2,9 @@
 
 {% block content %}
     <h1 class="search_title_position">Results for: <em>{{ query }}</em></h1>
-    <div class="row text-center">
+    <div class="row flex text-center">
       {% for recipe in search_recipe %}
-          <div class="col l3 m6 s12">
+          <div class="col l3 m6 s12 gap_between_image">
               <div class="card">
                   <div class="card-image">
                     <img src="{{ recipe.image }}">
@@ -13,7 +13,7 @@
                   <div class="card-content">
                     <p> {{ recipe.recipe_intro|truncate(200, True)|safe }}</p>
                   </div>
-                  <div class="card-action">
+                  <div class="card-action find_out_more_margin">
                     <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">Find Out More</a>
                   </div>
               </div> 
