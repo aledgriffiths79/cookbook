@@ -1,7 +1,7 @@
 # CookBook
 -----------
 
-## Milestone Project 3: Practical Python and Data Centric Development
+### Milestone Project 3: Practical Python and Data Centric Development
 
 In this project, I will build a full-stack site that allows users to create, read, update, and delete (CRUD) food recipes. Its value or purpose is to allow users to share there own recipes with the community, and benefit from having convenient access to the recipes provided by all other users.
 
