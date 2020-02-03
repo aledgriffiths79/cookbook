@@ -76,6 +76,10 @@ The project has multiple pages that provide different features and options.
   + **addrecipe.html** is where you upload a recipe. It allows users to add there recipe by filling out a form
   + **recipe.html** when you look more in detail on a recipe you will arrive at this page. In this page aswell as the recipe method, ingredients, and recipe introduction it provides you a choice to edit that recipe or delete the recipe. 
 
+# Features Left to Implement
+
+  + In the future i may add a login and password so that they the user has more control who can edit there own recipes that they have uploaded, because the application at present has no constraints to who can delete or ammend a recipe.
+
 ## Technologies Used
 
   + Python
@@ -89,6 +93,21 @@ The project has multiple pages that provide different features and options.
     + Used for storing data and is easy to add or change fields 
   + Flask
     + Flask provides libraries, modules and tools to help build my webb application. It doesnt depend on other libraries, hence why it is referred to a microframework
+
+## Testing
+
+I have tested the application manually on the basis of going over my UX section and ensure they all work as intended with the project providing an easy and straightforward way for the users to achieve their goals.
+The index and recipes page is tested by going from one page to the other and seeing if it loads correctly. The **add recipe** page is tested by checking the recipe is entered, the page re-directs and the new recipe is present on the **recipes page**
+
+The recipe page is tested by searching any of the recipes displayed and picking a recipe and then going to that recipe details page and checking that the contents are there.
+
+The update recipe page is tested by going to the **edit recipe page** and changing some data and committing it. This then redirects the user to the index page. I then test that the information has changed on that recipe.
+
+The delete recipe page is tested by going to it's recipe details page and deleting it, then checking the redirect has happened and that the recipe does not appear on the recipes page.
+
+I concentrated on producing a intuitative project where logic and functionality is at its core. I kept my design to be usable and simple to navigate with readable font faces and breathable spacing (i.e. negative space).
+
+As the site is built with a responsive design it works for mobiles, ipad and desktop. I used the development tools on google to make sure the different size devices scalability worked. 
 
 ## Deployment
 
@@ -108,7 +127,7 @@ In the development phase of my application i still needed to keep the security o
 
   + I added a background image to the index page from [pxhere](https://pxhere.com/)
 
-  + To have the application up and running i added recipes and recipe images myself as part of testing. I attained this from [bbcgoodfood](https://www.bbcgoodfood.com/)
+  + To have the application up and running i added recipes and recipe images myself as part of testing. I attained this from [BBC GoodFood](https://www.bbcgoodfood.com/)
 
 
 ### Acknowledgements
