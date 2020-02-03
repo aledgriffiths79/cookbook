@@ -74,8 +74,8 @@ def edit_recipe(recipe_id):
     form = EditRecipeForm(data=recipe_db)
     return render_template('edit_recipe.html', recipe=recipe_db, form=form)
   form = EditRecipeForm(request.form)
-  if request.method == 'GET':
-    recipes_db = mongo.db.recipes
+  if request.method == 'POST':
+    recipes_db = mongo.db.Recipes
     recipes_db.update_one({
       '_id_': ObjectId(recipe_id)
     }, {
@@ -87,7 +87,7 @@ def edit_recipe(recipe_id):
          'image': request.form['image'],
       }
     })
-    return redirect(url_for('index', title='New Recipe Added'))
+    return redirect(url_for('index', title='Updated Recipe'))
   return render_template('edit_recipe.html', recipe=recipe_db, form=form)
 
 # Delete recipe file
