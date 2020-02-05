@@ -67,9 +67,9 @@ def add_recipe():
 
 # Edit Recipe
 
-# @app.route('/edit_recipe/<recipe_id>')
-# def edit_recipe(recipe_id):
-#   return render_template('edit_recipe.html', recipe_db=mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)}))
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+  return render_template('edit_recipe.html', recipe_db=mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)}))
 
 # Delete recipe file
 
