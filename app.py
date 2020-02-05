@@ -67,29 +67,9 @@ def add_recipe():
 
 # Edit Recipe
 
-@app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
+@app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-  recipe_db = mongo.db.Recipes.find_one_or_404({'_id': ObjectId(recipe_id)})
-  if request.method == 'GET':
-    form = EditRecipeForm(data=recipe_db)
-    return render_template('edit_recipe.html', recipe=recipe_db, form=form)
-  form = EditRecipeForm(request.form)
-  if request.method == 'POST':
-    recipes_db = mongo.db.Recipes
-    recipes_db.update_one({
-      '_id_': ObjectId(recipe_id)
-    }, {
-      '$set': {
-        'title': request.form['recipe_name'],
-        'recipe_intro': request.form['recipe_intro'], 
-        'ingredients': request.form['ingredients'],
-         'method': request.form['method'],
-         'image': request.form['image'],
-      }
-    })
-    return redirect(url_for('index', title='Updated Recipe'))
-  else:
-    return render_template('edit_recipe.html', recipe=recipe_db, form=form)
+  return render_template('edit_recipe.html', recipe_db=mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)}))
 
 # Delete recipe file
 
