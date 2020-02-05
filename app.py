@@ -88,7 +88,8 @@ def edit_recipe(recipe_id):
       }
     })
     return redirect(url_for('index', title='Updated Recipe'))
-  return render_template('edit_recipe.html', recipe=recipe_db, form=form)
+  else:
+    return render_template('edit_recipe.html', recipe=recipe_db, form=form)
 
 # Delete recipe file
 
@@ -149,10 +150,10 @@ def handle_404(exception):
 
 if __name__ == '__main__':
   # Local Host
-  app.run(host='127.0.0.1', debug=True)
+  # app.run(host='127.0.0.1', debug=True)
 
   # Production (Heroku)
-  # app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)
+  app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)
 
 
 
