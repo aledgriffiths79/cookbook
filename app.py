@@ -76,11 +76,11 @@ def update_recipe(recipe_id):
   updateRecipe = mongo.db.Recipes
   updateRecipe.update( {'_id': ObjectId(recipe_id)},
   {
-    'recipe_name': request.form('recipe_name'),
-    'recipe_intro': request.form('recipe_intro'),
-    'ingredients': request.form('ingredients'),
-    'method': request.form('method'),
-    'image': request.form('image')
+    'recipe_name': request.form['recipe_name'],
+    'recipe_intro': request.form['recipe_intro'],
+    'ingredients': request.form['ingredients'],
+    'method': request.form['method'],
+    'image': request.form['image']
   })
   return redirect(url_for('index', title='Updated Recipe'))
 
