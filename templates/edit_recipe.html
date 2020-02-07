@@ -3,6 +3,7 @@
 
   <h3 class="edit_recipe_title">Edit Recipe</h3>
 <!-- assigned '' in the form action = '': instead of, what would be the same result = '{{url_for("add_recipe")}}' -->
+  <!-- {{ recipe }} -->
   <div class="row">
     <!-- recipe._id retrieves the _id field from an object called recipe -->
     <form action='{{url_for("update_recipe", recipe_id=recipe._id)}}' method='POST' class="col s12" action='/'>
@@ -10,26 +11,26 @@
         <div class="input-field col s12">
           <i class="material-icons prefix">local_dining</i>
           <!-- match the names of the input fields to the names of fields in mongodb -->
-          <input id="recipe_name" name='recipe_name' type="text" class="validate">
+          <input id="recipe_name" name='recipe_name' type="text" class="validate" value="{{ recipe.recipe_name }}">
           <label for="icon_prefix">Recipe Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">description</i>
-          <textarea name="recipe_intro" id="recipe_intro" class="materialize-textarea edit_recipe_text_resizing"></textarea>
+          <textarea name="recipe_intro" id="recipe_intro" class="materialize-textarea edit_recipe_text_resizing" > {{ recipe.recipe_intro }}" </textarea>
           <label for="icon_telephone">Recipe Introduction</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col l4 s12">
           <i class="material-icons prefix">local_dining</i>
-          <textarea name="ingredients" id="ingredients" class="materialize-textarea edit_recipe_text_resizing"></textarea>
+          <textarea name="ingredients" id="ingredients" class="materialize-textarea edit_recipe_text_resizing" > {{ recipe.ingredients }} </textarea>
           <label for="textarea1">Ingredients (one per line please)</label>
         </div>
         <div class="input-field col l8 s12">
           <i class="material-icons prefix">description</i>
-          <textarea name="method" id="method" class="materialize-textarea edit_recipe_text_resizing"></textarea>
+          <textarea name="method" id="method" class="materialize-textarea edit_recipe_text_resizing" > {{ recipe.method }} </textarea>
           <label for="textarea1">Method</label>
         </div>
       </div>
@@ -37,7 +38,7 @@
         <div class="input-field col s6">
           <i class="material-icons prefix">image</i>
           <!-- match the names of the input fields to the names of fields in mongodb -->
-          <input id="image" name="image" type="text" class="validate">
+          <input id="image" name="image" type="text" class="validate" value="{{ recipe.image }}">
           <label for="icon_prefix">Image Link (Full Path)</label>
         </div>
       </div>
