@@ -4,7 +4,7 @@
   <h3 class="edit_recipe_title">Edit Recipe</h3>
 <!-- assigned '' in the form action = '': instead of, what would be the same result = '{{url_for("add_recipe")}}' -->
   <div class="row">
-    <form action='' method='POST' class="col s12" action='/'>
+    <form action='{{url_for("update_recipe", "Recipe_id=Recipe._id")}}' method='POST' class="col s12" action='/'>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">local_dining</i>
