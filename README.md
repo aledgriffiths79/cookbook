@@ -9,7 +9,6 @@ I will build the application with the idea of allowing easy access to cooking re
 
 This project can be viewed [here](https://cookbook2020.herokuapp.com/)
 
-
 ## User Experience Design
 --------------------------
 
@@ -33,8 +32,8 @@ This project can be viewed [here](https://cookbook2020.herokuapp.com/)
     |------| :--------:|
     | A user wants to find the ingredients to a particular recipe   | Provide a search bar. This will work if only that particular recipe has been uploaded onto the website        |
     | A user wants to add a recipe of there own      |  Add a navigation link for the user to go to and upload there recipe           |
-    | May'be the user does'nt have a particular recipe they want to look up but see's an image and then wants to look up its method      |  Have a link below the descriptive content of the recipe with the relevant information           |
-    
+    | Maybe the user doesn't have a particular recipe they want to look up but see's an image and then wants to look up its method      |  Have a link below the descriptive content of the recipe with the relevant information           |
+
 ### Stucture Plane:
 
 The website will present you the user with a intuitive and structured format starting with the navigation. It will be clear and simple, displayed in a horizontal fashion on desktop, thus, it being a predictable structure. More a linear narrative for the audience intended. I will also display a hamburger navigation for mobile use. Color theme on all pages will be the same to make it consistent. 
@@ -114,9 +113,13 @@ As the site is built with a responsive design it works for mobiles, ipad and des
 My application was coded in the IDE: **Virtual Studio Code**, a local GIT directory was used for version control and then uploaded to GITHUB.
 This site is hosted using Heroku and is deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. 
 
-In order for the success of the deployment version, i would create an environment variable file named env.py. In this file i will store the MongoDB configuration key and values in order to keep the production database connection string private. A MongoDB database was used as the place to store data for this application. I also need to store these configuration variables in my **config vars** in my heroku settings which acts like a security confirmation in accordance with the values i have set in my env.py file. As these variables and its values are confidential they must not be seen by the public, therefore, i have created a file called .gitignore. In this file will be a list of files that i have within the applications repository that i dont want to share to github/public. And one of those files and its data is the environment variable file, **env.py**. 
+In order for the success of the deployment version, i would create an environment variable file in my applications repository named env.py. In this file i will store the MongoDB configuration key and values in order to keep the production database connection string private. A MongoDB database was used as the place to store data for this application. I also need to store these configuration variables in my **config vars** in my heroku settings which acts like a security confirmation in accordance with the values i have set in my env.py file. As these variables and its values are confidential they must not be seen by the public, therefore, i have created a file called .gitignore. In this file will be a list of files that i have within the applications repository that i dont want to share to github/public. And one of those files and its data is the environment variable file, **env.py**. 
 
-In the development phase of my application i still required to keep the security of my configuration variables private, because even though my application wasnt in deployment at that stage, in order to work on the development stage i still had to upload my code to github for the changes in my application to take place.  
+In the development phase of my application it was important to keep the security of my configuration variables private, because even though my application wasnt in deployment at that stage, in order to work on the development stage i still had to upload my code to github for the changes in my application to take place. 
+
+Hosting the development version was used using the url local host **http://127.0.0.1:5000/**. This is issued in your local command terminal after typing **python3 app.py** in the command terminal. When you make new features/functions in your IDE you refresh your development version browser and the changes will be seen live. However to make a permanent change to an updated file you then will have to use git in your command terminal to make those changes which then will be stored in your GITHUB repository.
+
+With Heroku an updated application will be uploaded automatically once you update your github repository as Heroku uses your chosen **deployment method** i.e. Github and *master branch* as every push to master will deploy a new version of the app. 
 
 ## Credits
 
