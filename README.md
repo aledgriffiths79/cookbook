@@ -119,7 +119,7 @@ In the development phase of my application it was important to keep the security
 
 Hosting the development version was used using the url local host **127.0.0.1:5000/**. This is issued in your local command terminal after inputting **python3 app.py** in the command terminal. The *app.py* file is the base where your backend functionality is interpreted to your frontend templates. When you make new features/functions in your IDE you refresh your development version browser and the changes will be seen live. However to make a permanent change to an updated file you then will have to use git in your command terminal to make those changes which then will be stored in your GITHUB repository.
 
-With Heroku an updated application will be uploaded automatically once you update your github repository as Heroku uses your chosen **deployment method** i.e. Github and *master branch* as every push to master will deploy a new version of the app. 
+With Heroku an updated application will be uploaded automatically once you update your github repository as Heroku uses your chosen **deployment method** i.e. Github and **master branch** as every push to master will deploy a new version of the app. 
 
 ## Credits
 
