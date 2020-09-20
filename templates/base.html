@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ title }} - Welsh Food Recipes</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
   
@@ -14,31 +16,47 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
 </head>
 <body>
-    <nav>
-        <div class="nav-wrapper">
-          <a href="{{ url_for('index') }}" class="brand-logo">Recipes</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('recipes')}}">Recipes</a></li>
-            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('recipes')}}">Recipes</a></li>
-            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-          </ul>
-        </div>
-    </nav>
+
+      <div class="topnav" id="myTopnav">
+  
+          <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+  
+          <a href="{{ url_for('recipes')}}" class="nav-link">Recipes</a>
+
+          <a href="{{ url_for('add_recipe')}}" class="nav-link">Add Recipe</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+    <!-- <nav class="sticky-top">
+      <div class="topnav" id="myTopnav">
+        <a href="{{ url_for('index') }}" class="brand-logo">Recipes</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('recipes')}}">Recipes</a></li>
+          <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('recipes')}}">Recipes</a></li>
+          <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+        </ul>
+      </div>
+    </nav> -->
+
     <div class="container">
         {% block content %}{% endblock %}
     </div>
     <footer class="page-footer">
       <nav>
         <div class="nav-wrapper">
-          <a href="{{ url_for('index') }}" class="brand-logo">Recipes</a>
+          <ul id="nav-mobile">
+          <a href="{{ url_for('index') }}" class="brand-logo">Home</a>
+          </ul>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('recipes')}}">Recipes</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
           </ul>
@@ -52,6 +70,17 @@
     </footer>
 
   <!-- good practice to leave jquery at bottom of body element because this will allow html elements fully rendered b4 any js activity or functions target those elements that have been rendered  -->
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
